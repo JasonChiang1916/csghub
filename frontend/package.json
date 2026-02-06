@@ -8,6 +8,9 @@
     "dev_build": "NODE_ENV=development vite build -w -m development",
     "test": "vitest",
     "coverage": "vitest run --coverage",
+    "test:finetune": "vitest run src/components/finetune/__tests__/",
+    "test:finetune:coverage": "vitest run --coverage src/components/finetune/__tests__/ || true && node ../tests/scripts/generate-test-report.js",
+    "test:report": "node ../tests/scripts/generate-test-report.js",
     "build": "vite build",
     "preview": "vite preview"
   },
@@ -62,6 +65,7 @@
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.1.2",
     "@vitest/coverage-v8": "^2.1.5",
+    "@vitest/ui": "^2.1.9",
     "@vue/test-utils": "^2.4.6",
     "autoprefixer": "^10.4.20",
     "jsdom": "^25.0.1",
